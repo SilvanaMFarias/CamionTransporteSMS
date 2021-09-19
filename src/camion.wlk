@@ -12,15 +12,15 @@ object camion {
 	}
 	
 	method todoPesoPar(){
-		return cosas.all{c=> c.peso()%2 == 0}
+		return cosas.all({c=> c.peso()%2 == 0})
 	}
 	
 	method hayAlgunoQuePesa(peso){
-		return cosas.any{c=> c.peso() == peso}
+		return cosas.any({c=> c.peso() == peso})
 	}
 	
 	method elDeNivel(nivel){
-		return cosas.find{c=>c.nivelPeligrosidad() == nivel}
+		return cosas.find({c=>c.nivelPeligrosidad() == nivel})
 	}
 	
 	method peso(){return 1000}
