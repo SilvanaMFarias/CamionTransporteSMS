@@ -1,0 +1,37 @@
+import cosas.*
+
+describe "Test de las cosas"{
+	method initialize(){
+		paqueteDeLadrillos.setCantidadLadrillos(400)
+		bateriaAntiaerea.setTieneMisiles(true)
+		residuosRadioactivos.setPeso(30)
+		arenaAGranel.setPeso(20)
+		contenedorPortuario.agregarContenido(knightRider)
+		contenedorPortuario.agregarContenido(bateriaAntiaerea)
+		contenedorPortuario.agregarContenido(bumblebee)
+		contenedorPortuario.agregarContenido(arenaAGranel)
+		embalajeDeSeguridad.setCosaQueEnvuelve(residuosRadioactivos)
+	}
+
+	
+	test "Test Paquete de Ladrillos" {
+		assert.equals(800,paqueteDeLadrillos.peso())
+		assert.equals(2,paqueteDeLadrillos.nivelPeligrosidad())
+	}
+
+	test "Test Batería Antiaérea"{
+		assert.equals(300,bateriaAntiaerea.peso())
+		assert.equals(100,bateriaAntiaerea.nivelPeligrosidad())
+	}	
+
+	test "Test Contenedor Portuario"{
+		assert.equals(1720,contenedorPortuario.peso())
+		assert.equals(100,contenedorPortuario.nivelPeligrosidad())	
+	}
+
+	test "Test Embalaje de Seguridad"{
+		assert.equals(30,embalajeDeSeguridad.peso())
+		assert.equals(100,embalajeDeSeguridad.nivelPeligrosidad())
+	}
+
+}
