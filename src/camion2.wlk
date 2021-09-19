@@ -5,6 +5,7 @@ object camion {
 	
 	method cargar(unaCosa) {
 		cosas.add(unaCosa)
+		unaCosa.consecuenciaDeLaCarga()
 	}
 	
 	method descargar(unaCosa){
@@ -54,7 +55,7 @@ object camion {
 		return cosas.map({c=>c.peso()})
 	}
 	
-	//method totalBultos(){
-	//	return cosas.sum({c=>c.cantidadDeBultos()})
-	//}
+	method totalBultos(){
+		return cosas.sum({con=>con.cantidadDeBultos()})
+	}
 }

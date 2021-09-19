@@ -1,0 +1,31 @@
+import camion2.*
+import cosas2.*
+
+describe "Test de las cosas"{
+	
+	method initialize(){
+		bumblebee.transformar()
+		contenedorPortuario.agregarContenido(bumblebee)
+		arenaAGranel.setPeso(150)
+		contenedorPortuario.agregarContenido(arenaAGranel)
+		bateriaAntiaerea.setTieneMisiles(false)
+		contenedorPortuario.agregarContenido(bateriaAntiaerea)
+		paqueteDeLadrillos.setCantidadLadrillos(80)
+		residuosRadioactivos.setPeso(85)
+		embalajeDeSeguridad.setCosaQueEnvuelve(knightRider)
+		camion.cargar(contenedorPortuario)
+		camion.cargar(paqueteDeLadrillos)
+		camion.cargar(residuosRadioactivos)
+		camion.cargar(embalajeDeSeguridad)
+	}
+	
+
+	test "Consecuencia de la carga"{
+		assert.equals(30,bumblebee.nivelPeligrosidad())
+		assert.equals(170,arenaAGranel.peso())
+		assert.equals(184,paqueteDeLadrillos.peso())
+		assert.equals(100,bateriaAntiaerea.nivelPeligrosidad())
+		assert.equals(100,residuosRadioactivos.peso())
+		assert.equals(500,embalajeDeSeguridad.peso())
+		}
+	}
